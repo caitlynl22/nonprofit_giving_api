@@ -3,4 +3,7 @@ Rails.application.routes.draw do
     post 'sign_in', on: :collection
   end
 
+  resources :organizations, defaults: { format: :json }, except: [:index, :new, :edit] do
+    post 'sign_in', on: :collection
+  end
 end
