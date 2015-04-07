@@ -11,10 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150406210339) do
+ActiveRecord::Schema.define(version: 20150407151558) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "campaigns", force: :cascade do |t|
+    t.string   "name"
+    t.string   "image_url"
+    t.text     "description"
+    t.integer  "goal"
+    t.integer  "organization_profile_id"
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+  end
+
+  add_index "campaigns", ["organization_profile_id"], name: "index_campaigns_on_organization_profile_id", using: :btree
 
   create_table "causes", force: :cascade do |t|
     t.string   "name"
@@ -63,6 +75,7 @@ ActiveRecord::Schema.define(version: 20150406210339) do
     t.datetime "updated_at",      null: false
   end
 
+  add_foreign_key "campaigns", "organization_profiles"
   add_foreign_key "organization_profiles", "causes"
   add_foreign_key "organization_profiles", "organizations"
 end

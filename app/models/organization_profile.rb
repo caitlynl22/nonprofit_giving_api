@@ -5,4 +5,6 @@ class OrganizationProfile < ActiveRecord::Base
   belongs_to :organization
   belongs_to :cause
 
+  has_many :campaigns
+
 end

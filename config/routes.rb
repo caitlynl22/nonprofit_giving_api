@@ -9,7 +9,9 @@ Rails.application.routes.draw do
 
   shallow do
     resources :causes, except: [:new, :edit, :update] do
-      resources :organization_profiles, except: [:new, :edit]
+      resources :organization_profiles, except: [:new, :edit] do
+        resources :campaigns, except: [:new, :edit]
+      end
     end
   end
 end
