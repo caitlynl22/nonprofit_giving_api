@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150406195327) do
+ActiveRecord::Schema.define(version: 20150406210339) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,8 +34,10 @@ ActiveRecord::Schema.define(version: 20150406195327) do
     t.integer  "organization_id"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.integer  "cause_id"
   end
 
+  add_index "organization_profiles", ["cause_id"], name: "index_organization_profiles_on_cause_id", using: :btree
   add_index "organization_profiles", ["organization_id"], name: "index_organization_profiles_on_organization_id", using: :btree
 
   create_table "organizations", force: :cascade do |t|
@@ -61,5 +63,6 @@ ActiveRecord::Schema.define(version: 20150406195327) do
     t.datetime "updated_at",      null: false
   end
 
+  add_foreign_key "organization_profiles", "causes"
   add_foreign_key "organization_profiles", "organizations"
 end

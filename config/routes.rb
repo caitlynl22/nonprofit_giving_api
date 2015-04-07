@@ -6,4 +6,10 @@ Rails.application.routes.draw do
   resources :organizations, defaults: { format: :json }, except: [:index, :new, :edit] do
     post 'sign_in', on: :collection
   end
+
+  shallow do
+    resources :causes, except: [:new, :edit, :update] do
+      resources :organization_profiles, except: [:new, :edit]
+    end
+  end
 end
