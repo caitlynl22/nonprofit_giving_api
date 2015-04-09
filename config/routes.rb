@@ -7,6 +7,8 @@ Rails.application.routes.draw do
     post 'sign_in', on: :collection
   end
 
+  resources :organization_profiles
+
   shallow do
     resources :causes, except: [:new, :edit, :update] do
       resources :organization_profiles, except: [:new, :edit] do

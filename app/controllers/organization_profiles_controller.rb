@@ -1,7 +1,14 @@
 class OrganizationProfilesController < ApplicationController
 
   def index
-    @organization_profiles = Cause.find(params[:cause_id]).organization_profiles
+    cause = Cause.find(params[:cause_id]) if params[:cause_id].present?
+
+    if cause
+      @organization_profiles = cause.organization_profiles
+    else
+      @organization_profiles = OrganizationProfile.all
+    end
+
     render json: @organization_profiles, status: 200
   end
 
