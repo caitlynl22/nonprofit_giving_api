@@ -9,7 +9,7 @@ class OrganizationProfilesController < ApplicationController
       @organization_profiles = OrganizationProfile.all
     end
 
-    render json: @organization_profiles, status: 200
+    render json: @organization_profiles,root: 'organization_profiles', status: 200
   end
 
   def show

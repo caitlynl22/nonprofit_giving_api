@@ -1,5 +1,5 @@
 class CampaignSerializer < ActiveModel::Serializer
-  embed :ids, embed_in_root: true
+  # embed :ids, include: true
 
   attributes :id, :name, :image_url, :description, :goal
 
