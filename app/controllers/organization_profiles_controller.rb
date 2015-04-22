@@ -2,7 +2,6 @@ class OrganizationProfilesController < ApplicationController
 
   def index
     cause = Cause.find(params[:cause_id]) if params[:cause_id].present?
-
     if cause
       @organization_profiles = cause.organization_profiles
     else
