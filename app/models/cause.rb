@@ -1,3 +1,3 @@
 class Cause < ActiveRecord::Base
-  has_many :organization_profiles
+  has_many :organization_profiles, dependent: :destroy
 end

@@ -5,5 +5,5 @@ class OrganizationProfileSerializer < ActiveModel::Serializer
 
   belongs_to :cause
   belongs_to :organization
-  has_many :campaigns
+  has_many :campaigns, dependent: :destroy
 end
