@@ -1,5 +1,5 @@
 class OrganizationProfileSerializer < ActiveModel::Serializer
-  # embed :ids, include: true
+  embed :ids, embed_in_root: true
 
   attributes :id, :name, :mission, :description, :image_url, :website, :address, :contact, :ein
 
