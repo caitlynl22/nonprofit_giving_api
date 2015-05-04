@@ -56,7 +56,7 @@ environment.organization_profiles << national_wildlife_profile
 environment.organization_profiles << green_action_profile
 
 american_wing = Campaign.create!(name: 'New American Arts Wing', image_url: 'www.imgur.com/32873hr', goal: 5000000)
-renovations = Campaign.create!(name: 'Renovations', description: 'Building revoations', goal: 250000)
+renovations = Campaign.create!(name: 'Renovations', description: 'Building renovations', goal: 250000)
 curator = Campaign.create!(name: 'New Curatorial Position', description: 'Cras justo odio, dapibus ac facilisis in, egestas eget quam. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.', image_url: 'www.imgur.com/3984724', goal: 500000)
 play_yard = Campaign.create!(name: 'New Dog Play Yard', description: 'Putting down artificial grass made for dog parks, new training aids.', image_url: 'www.imgur.com/289478924', goal: 30000)
 cages = Campaign.create!(name: 'New Cages', goal: 5000)
