@@ -1,3 +1,5 @@
 == README
 
-Rails API for Give Back, serving JSON to Ember.js frontend (https://github.com/caitlynl22/nonprofit_giving_app). Give Back is a nonprofit giving app that organizes nonprofits by cause (arts, human services, etc.) and allows users to donate to organizations' individual campaigns. User authentication (via auntentication token) is achieved with Devise. Plans to implement Stripe and AWS (for organizations to upload photos to their profiles).
+Rails API for Give Back, serving JSON to Ember.js frontend (https://github.com/caitlynl22/nonprofit_giving_app). Give Back is a nonprofit giving app that organizes nonprofits by cause (arts, human services, etc.) and allows users to donate to organizations' individual campaigns. Token authentication is achieved with Devise. Plans to implement Stripe and AWS (for organizations to upload photos to their profiles).
+
+![alt tag](https://raw.github.com/caitlynl22/nonprofit_giving_api/master/planning_docs/Nonprofit_Giving_App_ERD.jpeg)
