@@ -1,27 +1,6 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Rails API for Give Back, serving JSON to Ember.js frontend (https://github.com/caitlynl22/nonprofit_giving_app). Give Back is a nonprofit giving app that organizes nonprofits by cause (arts, human services, etc.) and allows users to donate to organizations' individual campaigns. User authentication (via auntentication token) is achieved with Devise. Plans to implement Stripe and AWS (for organizations to upload photos to their profiles).
 
 
 Please feel free to use a different markup language if you do not plan to run
