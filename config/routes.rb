@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  resources :users, defaults: { format: :json }, except: [:index, :new, :edit] do
-    post 'sign_in', on: :collection
-  end
+  devise_for :users, controllers: { sessions: 'sessions'}
+  # resources :users, defaults: { format: :json }, except: [:index, :new, :edit] do
+  #   post 'sign_in', on: :collection
+  # end
 
   resources :organizations, defaults: { format: :json }, except: [:index, :new, :edit] do
     post 'sign_in', on: :collection

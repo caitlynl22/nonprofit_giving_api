@@ -1,18 +1,28 @@
 class User < ActiveRecord::Base
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :trackable, :validatable
 
   validates :email, presence: true, uniqueness: true
   validates :first_name, presence: true
   validates :last_name, presence: true
 
-  has_secure_password
+  before_save :ensure_authentication_token
 
-  before_create :generate_token
-
-  def generate_token
-    return if token.present?
-    begin
-      self.token = SecureRandom.uuid.gsub(/\-/, '')
-    end while self.class.exists?(token: token)
+  def ensure_authentication_token
+    if authentication_token.blank?
+      self.authentication_token = generate_authentication_token
+    end
   end
+
+  private
+
+    def generate_authentication_token
+      loop do
+        token = Devise.friendly_token
+        break token unless User.where(authentication_token: token).first
+      end
+    end
 
 end
